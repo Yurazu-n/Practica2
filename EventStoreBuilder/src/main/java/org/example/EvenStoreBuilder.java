@@ -2,6 +2,7 @@ package org.example;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import org.apache.activemq.ActiveMQConnection;
 import org.apache.activemq.ActiveMQConnectionFactory;
 
 import javax.jms.*;
@@ -16,7 +17,7 @@ public class EvenStoreBuilder {
     }
 
     public void eventStoreBuild(String path) throws JMSException {
-        String url = "tcp://192.168.160.104:61616";
+        String url = ActiveMQConnection.DEFAULT_BROKER_URL;
         MessageConsumer consumer = null;
         try {
             consumer = getMessageConsumer(url);

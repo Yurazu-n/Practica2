@@ -1,4 +1,5 @@
 package org.example.control;
+import org.apache.activemq.ActiveMQConnection;
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.example.model.EventPublisher;
 
@@ -8,7 +9,8 @@ public class PredictionPublisher implements EventPublisher {
     @Override
     public void publishEvent(String jsonPrediction) throws MyExecutionException {
         try {
-            ConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://192.168.160.104:61616");
+            String url = ActiveMQConnection.DEFAULT_BROKER_URL;
+            ConnectionFactory connectionFactory = new ActiveMQConnectionFactory(url);
             Connection connection = connectionFactory.createConnection();
             connection.start();
 
