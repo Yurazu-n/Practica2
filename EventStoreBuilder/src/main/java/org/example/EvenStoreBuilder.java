@@ -10,6 +10,8 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.Instant;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class EvenStoreBuilder {
@@ -34,7 +36,6 @@ public class EvenStoreBuilder {
                 throw new RuntimeException(e);
             }
         });
-
     }
 
     private static MessageConsumer getMessageConsumer(String url) throws MyEventException {
@@ -59,7 +60,9 @@ public class EvenStoreBuilder {
 
         String ss = jsonObjectEvent.get("ss").getAsString();
         Instant instant = Instant.parse(jsonObjectEvent.get("ts").getAsString());
-        String eventDate = DateTimeFormatter.ofPattern("yyyyMMdd").format(instant);
+
+        ZonedDateTime zonedDateTime = instant.atZone(ZoneId.of("UTC"));
+        String eventDate = DateTimeFormatter.ofPattern("yyyyMMdd").format(zonedDateTime);
 
         String eventFilePath = eventDirectory + "/" + ss + eventDate + ".events";
 
