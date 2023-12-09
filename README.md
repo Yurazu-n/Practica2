@@ -12,7 +12,6 @@
 -------------
 
 # Functionality resume 
-
 ## Prediction Provider
 
 The code of this practice is separated beetwen 2 modules. The first one called PredictionProvider is a modified version of the code of the previous 
