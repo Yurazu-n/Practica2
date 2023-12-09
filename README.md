@@ -45,7 +45,7 @@ The resources used for this module are
 # 
 --------
 
-#Functinality resume
+# Functinality resume
 ## Event Store Builder
 
 The second module, EventStoreBuilder, creates a connection to the broker to recieve all the predictions information and save all the events obtained 
