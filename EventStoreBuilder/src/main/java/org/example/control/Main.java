@@ -1,4 +1,6 @@
-package org.example;
+package org.example.control;
+
+import org.example.control.EvenStoreBuilder;
 
 import javax.jms.JMSException;
 
