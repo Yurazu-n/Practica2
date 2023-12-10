@@ -79,7 +79,7 @@ independant to each other to make possible to change how the predictions are sen
 
 On the design department, all the parts of the code follows the Publisher/Subscriber pattern, relating their classes like this:
 
-
+![image](https://github.com/Yurazu-n/Practica2/assets/90729313/1480c5ba-a8aa-4cea-8bf2-d7dfc4ce4f7d)
 
 
 
